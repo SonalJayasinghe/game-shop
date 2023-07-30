@@ -8,6 +8,10 @@ export default function App() {
     <Grid templateAreas={{
       base: `"nav"  "main"`,
       lg: `"nav nav" "aside  main"` //lg - larger device over 1024px
+    }}
+    templateColumns={{
+      base: '1fr',
+      lg: '200px 1fr'
     }}>
                             
     <GridItem area="nav"> 
@@ -15,7 +19,7 @@ export default function App() {
      </GridItem>
 
     <Show above="lg">
-    <GridItem area="aside"> 
+    <GridItem area="aside" paddingX='20px'> 
       <GenreList></GenreList>
      </GridItem>
     </Show>
