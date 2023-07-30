@@ -2,6 +2,7 @@ import { Button, HStack, Heading, Image, List, ListItem, Spinner } from "@chakra
 import useGenres, { Genre } from "../hooks/useGenres";
 import getCropedImageUrl from "../services/image-url";
 
+
 interface Props{
     onSelectGenre: (genre: Genre) => void;
     selectedGenre: Genre | null
@@ -9,8 +10,10 @@ interface Props{
 
 function GenreList({onSelectGenre, selectedGenre} : Props) {
   const { data, isLoading, error} = useGenres();
+
     if(isLoading) return <Spinner/>
     if(error) return null;
+
   return (
     <>
     <Heading as='h2' fontSize='2s' marginBottom={3}> Genres </Heading>
